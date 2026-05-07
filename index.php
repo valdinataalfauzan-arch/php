@@ -30,6 +30,7 @@ if (isset($_POST['tambah'])) {
 if (isset($_GET['hapus'])) {
     $id = (int) $_GET['hapus'];
     mysqli_query($koneksi, "DELETE FROM users WHERE id=$id");
+    mysqli_query($koneksi, "ALTER TABLE users AUTO_INCREMENT = 1"); 
     header("Location: index.php");
     exit;
 }
